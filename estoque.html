@@ -1,8 +1,17 @@
-<!DOCTYPE html>
+
+<!--
+╔═╗╔═╗╔═╗╔╗╔ ╔╦╗╔═╗
+║ ╦║╣ ╠═╣║║║ ║║║║╣ 
+╚═╝╚═╝╩ ╩╝╚╝o╩ ╩╚═╝
+geanramus@gmail.com
+www.geanramos.com
+instagram: @GeanRamus
+Twitter: @GeanRamos
+-->
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, initial-scale=1, shrink-to-fit=no" />
     <title>Estoque - Grupo Ox</title>
 
     <meta name="description" content="Acesse o sistema de gestão de estoque do Grupo OX. Consulte o inventário, registre entradas e saídas de produtos e mantenha o controle total de suas operações.">
@@ -24,22 +33,33 @@
     <meta name="twitter:image" content="https://i1.wp.com/cdn.jsdelivr.net/gh/geanramos/souox/img/planilha-estoque.png?resize=700,393">
     <meta name="twitter:site" content="@geanramos">
     <meta name="twitter:creator" content="@geanramos">
-    <meta http-equiv="refresh" content="30; url=https://docs.google.com/spreadsheets/d/11CUTszyNTnnCQqTeqVtaWSt5HKH-DTMm/edit?usp=sharing&ouid=101182822215527701552&rtpof=true&sd=true">
-
-</head>
-<body>
-
-    <header>
-        <h1>Página de Controle de Estoque - Grupo OX</h1>
-    </header>
-
-    <main>
-        <p>Conteúdo sobre o estoque aqui.</p>
-    </main>
-
-    <footer>
-        <p>&copy; 2025 Grupo OX</p>
-    </footer>
-
-</body>
+    <script type="text/javascript">
+        let seconds = 5;
+        const redirectUrl = "https://docs.google.com/spreadsheets/d/11CUTszyNTnnCQqTeqVtaWSt5HKH-DTMm/edit?usp=sharing&ouid=101182822215527701552&rtpof=true&sd=true";        
+        function update_timer() {
+            document.getElementById("timer").innerHTML = seconds;
+            seconds--;
+            if (seconds < 0) {
+                clearInterval(timer);
+                window.location.href = redirectUrl;
+            }
+        }        
+        const timer = setInterval(update_timer, 1000);
+        document.addEventListener("DOMContentLoaded", () => {
+            document.getElementById("redirect-link").href = redirectUrl;
+            update_timer();
+        });
+    </script>
+    <link rel="stylesheet" href="./css/style-redirect.css" type="text/css" media="all" />
+  </head>
+  <body>
+    <div class="container">
+      <img src="./img/logo-redrect.png" class="logo" />
+      <div class="box">
+        <h1>Redirecionando para Estoque...</h1>
+        <div id="timer"></div>
+      </div>
+      <div class="mensagem">Se a página não redirecionar, <a href="#" id="redirect-link">clique aqui</a></div>
+    </div>
+  </body>
 </html>
