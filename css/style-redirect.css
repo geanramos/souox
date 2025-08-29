@@ -1,0 +1,45 @@
+      body {
+        margin: 0;
+        background: linear-gradient(180deg, rgba(34, 169, 225, 1) 0%, rgba(0, 74, 176, 1) 100%);
+        color: #424242;
+      }
+      h1 {
+        font-size: 18px;
+        margin: 0;
+      }
+      a {
+        color: rgba(255, 255, 255, 0.9);
+      }
+      #timer {
+        font-size: 34px;
+        font-weight: bold;
+      }
+      .container {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+        font-family: -apple-system, BlinkMacSystemFont, segoe ui, roboto, oxygen-sans, ubuntu, cantarell, helvetica neue, sans-serif;
+      }
+      .logo {
+        margin-bottom: -8px;
+        width: 200px;
+      }
+      .box {
+        text-align: center;
+        background: white;
+        padding: 40px;
+        border-radius: 4px;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        max-width: 290px;
+        box-sizing: border-box;
+      }
+      .mensagem {
+        color: rgba(255, 255, 255, 0.6);
+      }
