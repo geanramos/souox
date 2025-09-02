@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grupo Ox - Inovação e Sustentabilidade</title>
+    <style>
+        /* Importação da Fonte do Google */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+        /* === RESET E VARIÁVEIS GLOBAIS === */
+        :root {
+            --primary-color: #005A9C; /* Azul Corporativo */
+            --secondary-color: #00A859; /* Verde Sustentabilidade */
+            --dark-color: #2C3E50; /* Cinza Escuro para Texto */
+            --light-color: #FFFFFF;
+            --gray-background: #f4f7f6;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 0 2rem;
+            overflow: hidden;
+        }
+
+        h1, h2, h3 {
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        h1 { font-size: 3rem; }
+        h2 { font-size: 2.2rem; text-align: center; margin-bottom: 2.5rem;}
+        p { margin-bottom: 1rem; }
+
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--primary-color);
+            color: var(--light-color);
+            padding: 12px 30px;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+
+        .btn:hover {
+            background: #004a80;
+        }
+
+        section {
+            padding: 4rem 0;
+        }
+        
+        /* === CABEÇALHO === */
+        .header {
+            background: var(--light-color);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--dark-color);
+        }
+
+        .header .navbar a {
+            color: var(--dark-color);
+            margin-left: 1.5rem;
+            font-weight: 400;
+            transition: color 0.3s ease;
+        }
+
+        .header .navbar a:hover {
+            color: var(--primary-color);
+        }
+
+        /* === SEÇÃO PRINCIPAL (HERO) === */
+        .hero {
+            height: 80vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80') no-repeat center center/cover;
+            color: var(--light-color);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 1rem;
+        }
+
+        .hero h1 {
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero h3 {
+            font-weight: 300;
+            max-width: 700px;
+            margin-bottom: 2rem;
+        }
+        
+        .hero .btn {
+            background: var(--secondary-color);
+        }
+
+        .hero .btn:hover {
+            background: #008a49;
+        }
+
+        /* === SEÇÃO MARCAS === */
+        #marcas {
+            background: var(--gray-background);
+        }
+        
+        .marcas-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+        
+        .marca-card {
+            background: var(--light-color);
+            padding: 2rem;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .marca-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+        }
+
+        .marca-card .icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .marca-card h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .marca-card a {
+            font-weight: 600;
+            color: var(--secondary-color);
+        }
+
+        /* === SEÇÃO SOBRE NÓS === */
+        #sobre .container {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+        }
+        
+        #sobre .sobre-texto {
+            flex: 1;
+        }
+        
+        #sobre .sobre-destaques {
+            flex: 1;
+        }
+
+        .destaque-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .destaque-item .icon {
+            font-size: 2rem;
+            margin-right: 1rem;
+            color: var(--secondary-color);
+        }
+        
+        /* === SEÇÃO CONTATO === */
+        #contato {
+            background: var(--gray-background);
+        }
+        
+        .contato-form {
+            max-width: 600px;
+            margin: auto;
+            background: var(--light-color);
+            padding: 2.5rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+        
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .contato-form .btn {
+            width: 100%;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* === RODAPÉ === */
+        .footer {
+            background: var(--dark-color);
+            color: var(--light-color);
+            padding: 3rem 0;
+            text-align: center;
+        }
+        
+        .footer .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .footer .social-links a {
+            color: var(--light-color);
+            margin: 0 0.5rem;
+            font-size: 1.5rem;
+        }
+        
+        .footer p {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+
+        /* === RESPONSIVIDADE === */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            h2 { font-size: 1.8rem; }
+            
+            .header .navbar {
+                display: none; /* Simplificado - para um menu real, precisaria de JavaScript */
+            }
+
+            .marcas-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            #sobre .container {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <a href="#" class="logo">[LOGO] Grupo Ox</a>
+            <nav class="navbar">
+                <a href="#inicio">Início</a>
+                <a href="#sobre">Sobre Nós</a>
+                <a href="#marcas">Nossas Marcas</a>
+                <a href="#contato">Contato</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+
+        <section class="hero" id="inicio">
+            <h1>Inovação e Sustentabilidade em Cada Solução.</h1>
+            <h3>O Grupo Ox desenvolve produtos de alta qualidade para os setores automotivo, industrial e de consumo, com um compromisso real com o futuro do planeta.</h3>
+            <a href="#marcas" class="btn">Conheça Nossas Soluções</a>
+        </section>
+
+        <section id="marcas">
+            <div class="container">
+                <h2>Um Portfólio Completo para Todas as Necessidades</h2>
+                <div class="marcas-grid">
+                    <div class="marca-card">
+                        <div class="icon">[ÍCONE AUTO]</div>
+                        <h4>OX AUTO</h4>
+                        <p>Performance e cuidado para o setor automotivo, garantindo o máximo desempenho.</p>
+                        <a href="#">Saiba Mais</a>
+                    </div>
+                    <div class="marca-card">
+                        <div class="icon">[ÍCONE CLEAN]</div>
+                        <h4>OX CLEAN</h4>
+                        <p>Limpeza e bem-estar para o seu lar com produtos de alta eficiência e praticidade.</p>
+                        <a href="#">Saiba Mais</a>
+                    </div>
+                    <div class="marca-card">
+                        <div class="icon">[ÍCONE BEAUTY]</div>
+                        <h4>OX BEAUTY</h4>
+                        <p>Uma linha completa para realçar a beleza natural com produtos inovadores e de qualidade.</p>
+                        <a href="#">Saiba Mais</a>
+                    </div>
+                    <div class="marca-card">
+                        <div class="icon">[ÍCONE EMBALAGENS]</div>
+                        <h4>OX EMBALAGENS</h4>
+                        <p>Desenvolvemos soluções inteligentes e sustentáveis para proteger e valorizar seus produtos.</p>
+                        <a href="#">Saiba Mais</a>
+                    </div>
+                    <div class="marca-card">
+                        <div class="icon">[ÍCONE QUÍMICOS]</div>
+                        <h4>OX QUÍMICOS</h4>
+                        <p>Fornecemos insumos químicos essenciais com a máxima pureza e segurança para a indústria.</p>
+                        <a href="#">Saiba Mais</a>
+                    </div>
+                    <div class="marca-card">
+                        <div class="icon">[ÍCONE IMPORTS]</div>
+                        <h4>OX IMPORTS</h4>
+                        <p>Conectamos mercados e geramos oportunidades através do comércio internacional.</p>
+                        <a href="#">Saiba Mais</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="sobre">
+            <div class="container">
+                <div class="sobre-texto">
+                    <h2>Mais de 500 Clientes em Todo o Brasil Confiam no Grupo Ox.</h2>
+                    <p>Nascemos com a missão de desenvolver soluções que impulsionam o mercado e respeitam o meio ambiente. Para nós, qualidade é inegociável, e a sustentabilidade é o único caminho para o futuro.</p>
+                    <p>Nosso compromisso se reflete em cada etapa da produção, na segurança dos nossos colaboradores e na satisfação total dos nossos clientes e parceiros comerciais.</p>
+                </div>
+                <div class="sobre-destaques">
+                    <div class="destaque-item">
+                        <div class="icon">[ÍCONE CERTIFICADO]</div>
+                        <div>
+                            <h4>Qualidade Certificada</h4>
+                            <p>Processos rigorosos para garantir o melhor produto.</p>
+                        </div>
+                    </div>
+                    <div class="destaque-item">
+                        <div class="icon">[ÍCONE INOVAÇÃO]</div>
+                        <div>
+                            <h4>Inovação Constante</h4>
+                            <p>Investimento contínuo em tecnologia de ponta.</p>
+                        </div>
+                    </div>
+                    <div class="destaque-item">
+                        <div class="icon">[ÍCONE AMBIENTAL]</div>
+                        <div>
+                            <h4>Responsabilidade Ambiental</h4>
+                            <p>Práticas sustentáveis em toda a cadeia produtiva.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contato">
+            <div class="container">
+                <h2>Vamos Conversar?</h2>
+                <p style="text-align: center; max-width: 600px; margin: 0 auto 2.5rem auto;">Nossa equipe está pronta para entender suas necessidades e oferecer a melhor solução para o seu negócio. Entre em contato conosco!</p>
+                <form class="contato-form">
+                    <div class="form-group">
+                        <label for="name">Nome</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Mensagem</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Enviar Mensagem</button>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="logo">[LOGO] Grupo Ox</div>
+            <div class="social-links">
+                <a href="#">[LINKEDIN]</a>
+                <a href="#">[INSTAGRAM]</a>
+            </div>
+            <p>© 2024 Grupo Ox. Todos os direitos reservados. | Política de Privacidade</p>
+        </div>
+    </footer>
+
+</body>
+</html>
