@@ -1,0 +1,11 @@
+/projeto_login/
+|
+|-- index.html
+|-- style.css
+|-- script.js
+|-- database.json
+|
+|-- /contracheques/
+|   |-- colaborador-52120.html
+|   |-- colaborador-11223.html
+|   |-- ... (outros arquivos dos colaboradores)

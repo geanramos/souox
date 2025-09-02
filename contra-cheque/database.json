@@ -1,0 +1,17 @@
+[
+  {
+    "codigo": "52120",
+    "senha": "1234",
+    "url": "contracheques/colaborador-52120.html"
+  },
+  {
+    "codigo": "111222",
+    "senha": "abcd",
+    "url": "contracheques/colaborador-11223.html"
+  },
+  {
+    "codigo": "333444",
+    "senha": "senha",
+    "url": "contracheques/colaborador-98765.html"
+  }
+]
